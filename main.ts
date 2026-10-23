@@ -4,7 +4,6 @@ namespace SpriteKind {
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Fish, function (sprite, otherSprite) {
     info.changeScoreBy(1)
-    sprites.destroy(otherSprite)
 })
 info.onScore(10, function () {
     game.gameOver(true)
@@ -48,23 +47,3 @@ let mySprite2 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Fish)
 mySprite.setPosition(120, 60)
-let mySprite3 = sprites.create(img`
-    ....................................
-    ....................................
-    ....................................
-    ...............ccffff...............
-    ..............cddbbbf...............
-    .......ffffffcddbbbf................
-    .....ffbbbbbbbbbbbbbcfff.......ccccc
-    ...ffbbbbbbbbcbcbbbbbcccff....cdbbbc
-    ..fbbbbbbbbbbcbbcbbbbcccccfffcddbbc.
-    .fbcbbbbbbbbbbcbcbbbbccccccccbdbbf..
-    .fbbbbbbbfffbbcbbbbbccccccccccbbcf..
-    .ffbb1111fffbbcbbbbcccccccbcffbccf..
-    ..ff111111111bbbbccccccbbbcc..fbbcf.
-    ....ccccccc111bdbbbfddbccc.....ffbbf
-    ........ccccccfbdbbbfcc..........fff
-    ...............ffffff...............
-    `, SpriteKind.Enemy)
-mySprite3.setVelocity(30, 0)
-info.setLife(3)
